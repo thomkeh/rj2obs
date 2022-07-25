@@ -16,32 +16,6 @@ Output has the following directory structure:
     * e.g. `* this block gets referenced  ^someroamid`
 * Blockrefs, block mentions, block embeds are replaced by their content with an appended Obsidian blockref link
     * e.g. `this block gets referenced  [[orignote#^someblockid]]`
-* All notes are prefixed with a yaml header containing title and creation date:
-```yaml
----
-title:   
-created: YYYY-MM-DD
----
-
-```
-
-* Top level roam blocks that don't contain children are not formatted as list
-* Roam blocks containing linebreaks are broken down into multiple bullets
-    * roam: 
-```markdown
-
-        * line 1
-          line 2
-        * next block
-```
-*
-    * becomes:
-```markdown
-        * line 1
-        * line 2
-
-        * next block
-```
 
 **Note:** Please run Obsidian's Markdown importer after this conversion. It will fix #tag links and formattings (todo syntax, highlights, etc).
 
@@ -59,5 +33,6 @@ pip install -r requirements.txt
 # Usage:
 ```bash
 python r2o.py my-roam-export.json
+bash other_fixes.sh
 ```
 
